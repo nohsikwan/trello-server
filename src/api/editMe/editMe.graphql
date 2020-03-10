@@ -1,0 +1,3 @@
+type Mutation {
+	editMe(password: String!, bio: String!): User!
+}

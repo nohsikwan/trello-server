@@ -1,0 +1,3 @@
+type Mutation {
+	editContainer(containerId: String!, text: String!): Container!
+}

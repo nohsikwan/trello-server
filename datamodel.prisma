@@ -1,0 +1,35 @@
+type User {
+id: ID! @id
+email: String! @unique 
+password: String! 
+name: String! @unique 
+profileImg: String
+bio: String
+boards:[Board!] @relation(name: "Board" ,onDelete: CASCADE)
+createdAt: DateTime! @createdAt
+}
+ 
+
+
+type Board {
+id: ID! @id
+text: String!
+user: User! @relation(name: "Board" ,onDelete: SET_NULL)
+containers: [Container!]  @relation(name: "Container", onDelete: CASCADE)
+createdAt: DateTime! @createdAt
+}
+
+type Container {
+id: ID! @id
+text: String!
+board: Board! @relation(name: "Container", onDelete: SET_NULL)
+cards:[Card!] @relation(name: "Card" ,onDelete: CASCADE)
+createdAt: DateTime! @createdAt
+}
+
+type Card {
+id: ID! @id
+text: String!
+container: Container! @relation(name: "Card" ,onDelete: SET_NULL)
+createdAt: DateTime! @createdAt
+}

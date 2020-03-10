@@ -1,0 +1,3 @@
+type Mutation {
+	deleteContainer(containerId: String!): Boolean!
+}

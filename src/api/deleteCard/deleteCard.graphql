@@ -1,0 +1,3 @@
+type Mutation {
+	deleteCard(cardId: String!): Boolean!
+}
