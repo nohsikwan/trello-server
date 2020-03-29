@@ -1,0 +1,3 @@
+type Mutation {
+  updateTextContainer(id: String!, text: String!): Boolean!
+}

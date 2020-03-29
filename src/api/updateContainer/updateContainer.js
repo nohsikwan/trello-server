@@ -1,25 +1,21 @@
 import { prisma } from "../../../generated/prisma-client";
-import crypto from "crypto";
+
 export default {
   Mutation: {
-    editMe: async (_, args, { request, isAuthenticated }) => {
+    updateTextContainer: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { bio, email, name } = args;
-      const {
-        user: { id }
-      } = request;
+      const { id, text } = args;
 
       try {
-        await prisma.updateUser({
+        await prisma.updateContainer({
           where: {
             id
           },
           data: {
-            name,
-            email,
-            bio
+            text
           }
         });
+
         return true;
       } catch (error) {
         console.log(error);

@@ -1,0 +1,8 @@
+type Mutation {
+  updateNumCard(
+    createdAt1: String!
+    createdAt2: String!
+    cardId1: String!
+    cardId2: String!
+  ): Boolean!
+}

@@ -1,33 +1,35 @@
 type User {
-	id: ID!
-	email: String!
-	password: String!
-	name: String!
-	profileImg: String
-	bio: String
-	boards: [Board!]
-	createdAt: String
+  id: ID!
+  email: String!
+  password: String!
+  name: String!
+  profileImg: String
+  bio: String
+  boards: [Board!]!
+  createdAt: String
 }
 
 type Board {
-	id: ID!
-	text: String!
-	user: User!
-	containers: [Container!]
-	createdAt: String
+  id: ID!
+  text: String!
+  user: User!
+  color: String
+  containers: [Container!]!
+  createdAt: String
 }
 
 type Container {
-	id: ID!
-	text: String!
-	board: Board!
-	cards: [Card!]
-	createdAt: String
+  id: ID!
+  text: String!
+  board: Board!
+  cards: [Card!]!
+  createdAt: String
 }
 
 type Card {
-	id: ID!
-	text: String!
-	container: Container!
-	createdAt: String
+  id: ID!
+  num: String!
+  text: String!
+  container: Container!
+  created: String
 }
